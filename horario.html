@@ -1,33 +1,185 @@
-<table>
-  <tr>
-    <th>Día</th>
-    <th>Mañana (6:00 - 12:00)</th>
-    <th>Tarde</th>
-  </tr>
-  <tr>
-    <td>Lunes</td>
-    <td>Escuela</td>
-    <td>Especialidad en sistemas</td>
-  </tr>
-  <tr>
-    <td>Martes</td>
-    <td>Escuela</td>
-    <td>Desarrollar juego</td>
-  </tr>
-  <tr>
-    <td>Miércoles</td>
-    <td>Escuela</td>
-    <td>Especialidad</td>
-  </tr>
-  <tr>
-    <td>Jueves</td>
-    <td>Escuela</td>
-    <td>Desarrollar juego</td>
-  </tr>
-  <tr>
-    <td>Viernes</td>
-    <td>Escuela</td>
-    <td>Desarrollar juego</td>
-  </tr>
-</table>
-<a href="index.html">⬅ Regresar</a>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario - Alfonzo Márquez López</title>
+    <style>
+        /* Reset de caja */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Fondo estilo Apple Dark Mode */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #000000;
+            background-image: radial-gradient(circle at 50% -20%, #1c1c1e, #000000 80%);
+            background-attachment: fixed;
+            color: #f5f5f7;
+            text-align: center;
+            margin: 0;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            justify-content: center;
+        }
+
+        /* Contenedor principal Liquid Glass de Apple */
+        .contenedor-cristal {
+            background: rgba(25, 25, 27, 0.65);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            /* Bordes grabados cristalinos */
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            border-left: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 24px;
+            padding: 35px 25px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9),
+                        inset 0 1px 1px rgba(255, 255, 255, 0.15);
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+            margin: 0 0 25px 0;
+        }
+
+        /* Tabla estilizada en Liquid Glass */
+        .tabla-horario {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 30px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(15, 15, 17, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .tabla-horario th {
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 16px;
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .tabla-horario th:last-child {
+            border-right: none;
+        }
+
+        .tabla-horario td {
+            padding: 14px 16px;
+            color: #a1a1a6;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .tabla-horario td:last-child {
+            border-right: none;
+        }
+
+        .tabla-horario tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Resaltado del día */
+        .tabla-horario td:first-child {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* Interacción al pasar el ratón por la fila */
+        .tabla-horario tr:hover td {
+            background: rgba(255, 255, 255, 0.06);
+            color: #ffffff;
+        }
+
+        /* Botón de regresar estilo Apple Glass */
+        .btn-regresar {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.35);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .btn-regresar:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8),
+                        0 0 15px rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <main class="contenedor-cristal">
+        <h1>Mi Horario</h1>
+
+        <table class="tabla-horario">
+            <thead>
+                <tr>
+                    <th>Día</th>
+                    <th>Mañana (6:00 - 12:00)</th>
+                    <th>Tarde</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lunes</td>
+                    <td>Escuela</td>
+                    <td>Especialidad en sistemas</td>
+                </tr>
+                <tr>
+                    <td>Martes</td>
+                    <td>Escuela</td>
+                    <td>Desarrollar juego</td>
+                </tr>
+                <tr>
+                    <td>Miércoles</td>
+                    <td>Escuela</td>
+                    <td>Especialidad</td>
+                </tr>
+                <tr>
+                    <td>Jueves</td>
+                    <td>Escuela</td>
+                    <td>Desarrollar juego</td>
+                </tr>
+                <tr>
+                    <td>Viernes</td>
+                    <td>Escuela</td>
+                    <td>Desarrollar juego</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            <a href="index.html" class="btn-regresar">⬅ Regresar</a>
+        </div>
+    </main>
+
+</body>
+</html>

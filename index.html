@@ -1,77 +1,202 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Mi Vida</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Vida - Alfonzo Márquez López</title>
+    <style>
+        /* Reset de caja del Paso 3.2 de la guía */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Fondo estilo Apple Dark Mode */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #000000;
+            background-image: radial-gradient(circle at 50% -20%, #1c1c1e, #000000 80%);
+            background-attachment: fixed;
+            color: #f5f5f7;
+            text-align: center;
+            margin: 0;
+            padding: 30px 20px;
+        }
+
+        /* Encabezado con cristal oscuro estilo iOS/macOS */
+        #encabezado-principal {
+            background-color: rgba(25, 25, 27, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            /* Borde brillante tipo cristal de Apple */
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+            margin: 0 0 8px 0;
+        }
+
+        h2 {
+            color: #f5f5f7;
+            font-size: 1.5rem;
+            letter-spacing: -0.3px;
+            margin-bottom: 25px;
+        }
+
+        p {
+            color: #a1a1a6;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        hr {
+            width: 80%;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            margin: 30px auto;
+        }
+
+        /* Tabla central */
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        td {
+            padding: 15px;
+            vertical-align: top;
+        }
+
+        /* Tarjeta de cristal Apple Liquid Glass */
+        .tarjeta-cristal {
+            display: block;
+            background: rgba(30, 30, 32, 0.5);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            /* Bordes grabados con luz reflectiva */
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 22px;
+            padding: 14px;
+            text-decoration: none;
+            color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8),
+                        inset 0 1px 1px rgba(255, 255, 255, 0.15);
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Imágenes redondeadas estilo iOS */
+        .tarjeta-cristal img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* Interacción al pasar el ratón (Hover) */
+        .tarjeta-cristal:hover {
+            background: rgba(45, 45, 50, 0.75);
+            border-color: rgba(255, 255, 255, 0.4);
+            border-top-color: rgba(255, 255, 255, 0.6);
+            transform: scale(1.04);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9),
+                        0 0 20px rgba(255, 255, 255, 0.1),
+                        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+        }
+
+        .tarjeta-cristal p {
+            margin: 4px 0 2px 0;
+            font-weight: 600;
+            color: #f5f5f7;
+            font-size: 0.95rem;
+        }
+    </style>
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #f0f0f0; text-align: center;">
+<body>
 
-    <h1>Mi Vida</h1>
-    <p>Me llamo Alfonzo Márquez López, vivo en San Gil y tengo 18 años.</p>
+    <!-- Encabezado -->
+    <div id="encabezado-principal">
+        <h1>Mi Vida</h1>
+        <p>Me llamo Alfonzo Márquez López, vivo en San Gil y tengo 18 años.</p>
+    </div>
 
-    <hr style="width: 80%;">
+    <hr>
 
     <h2>Mis Secciones</h2>
 
-    <!-- Usamos una tabla sin bordes visibles para organizar las imágenes en filas -->
-    <table align="center" cellspacing="15">
+    <!-- Grid organizado en tabla -->
+    <table align="center">
         <tr>
             <!-- Educación -->
             <td align="center">
-                <a href="educacion.html" target="_blank">
-                    <img src="img/images.jpg" alt="Educación" width="200" height="200" style="border: 3px solid #333; border-radius: 10px;">
+                <a href="educacion.html" target="_blank" class="tarjeta-cristal">
+                    <img src="img/images.jpg" alt="Educación">
+                    <p>Educación</p>
                 </a>
-                <p><b>Educación</b></p>
             </td>
 
-            <!-- amigos -->
+            <!-- Amigos -->
             <td align="center">
-                <a href="amigos.html" target="_blank">
-                    <img src="img/amigos.jpg" alt="Amigos" width="200" height="200" style="border: 3px solid #333; border-radius: 10px;">
+                <a href="amigos.html" target="_blank" class="tarjeta-cristal">
+                    <img src="img/amigos.jpg" alt="Amigos">
+                    <p>Amigos</p>
                 </a>
-                <p><b>Amigos</b></p>
             </td>
 
             <!-- Familia -->
             <td align="center">
-                <a href="familia.html" target="_blank">
-                    <img src="img/familia.jpg" alt="Familia" width="200" height="200" style="border: 3px solid #333; border-radius: 10px;">
+                <a href="familia.html" target="_blank" class="tarjeta-cristal">
+                    <img src="img/familia.jpg" alt="Familia">
+                    <p>Familia</p>
                 </a>
-                <p><b>Familia</b></p>
             </td>
 
             <!-- Horario -->
             <td align="center">
-                <a href="horario.html" target="_blank">
-                    <img src="img/Kill.jpg" alt="Familia" width="200" height="200" style="border: 3px solid #333; border-radius: 10px;">
+                <a href="horario.html" target="_blank" class="tarjeta-cristal">
+                    <img src="img/Kill.jpg" alt="Horario">
+                    <p>Horario</p>
                 </a>
-                <p><b>Horario</b></p>
             </td>
 
             <!-- Hobbies -->
             <td align="center">
-                <a href="hobbies.html" target="_blank">
-                    <img src="img/cs.png" alt="Hobbies" width="200" height="200" style="border: 3px solid #333; border-radius: 10px;">
+                <a href="hobbies.html" target="_blank" class="tarjeta-cristal">
+                    <img src="img/cs.png" alt="Hobbies">
+                    <p>Hobbies</p>
                 </a>
-                <p><b>Hobbies</b></p>
             </td>
         </tr>
 
         <tr>
             <!-- Música -->
             <td align="center">
-                <a href="musica.html" target="_blank">
-                    <img src="img/musica.jpg" alt="Música" width="200" height="200" style="border: 3px solid #333; border-radius: 10px;">
+                <a href="musica.html" target="_blank" class="tarjeta-cristal">
+                    <img src="img/musica.jpg" alt="Música">
+                    <p>Música</p>
                 </a>
-                <p><b>Música</b></p>
             </td>
 
             <!-- Nacimiento -->
             <td align="center">
-                <a href="nacimiento.html" target="_blank">
-                    <img src="img/Bucaramanga_desde_Torre_del_Vento.jpg" alt="Nacimiento" width="200" height="200" style="border: 3px solid #333; border-radius: 10px;">
+                <a href="nacimiento.html" target="_blank" class="tarjeta-cristal">
+                    <img src="img/Bucaramanga_desde_Torre_del_Vento.jpg" alt="Nacimiento">
+                    <p>Lugar de nacimiento</p>
                 </a>
-                <p><b>Lugar de nacimiento</b></p>
-                
             </td>
         </tr>
     </table>

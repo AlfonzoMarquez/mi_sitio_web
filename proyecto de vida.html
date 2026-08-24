@@ -1,15 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<title>Proyecto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de Vida - Alfonzo Márquez López</title>
+    <style>
+        /* Reset básico del modelo de caja */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Fondo estilo Apple Dark Mode */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #000000;
+            background-image: radial-gradient(circle at 50% -20%, #1c1c1e, #000000 80%);
+            background-attachment: fixed;
+            color: #f5f5f7;
+            text-align: center;
+            margin: 0;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            justify-content: center;
+        }
+
+        /* Contenedor principal Liquid Glass de Apple */
+        .contenedor-cristal {
+            background: rgba(25, 25, 27, 0.65);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            /* Bordes grabados cristalinos */
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            border-left: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 24px;
+            padding: 35px 25px;
+            max-width: 720px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9),
+                        inset 0 1px 1px rgba(255, 255, 255, 0.15);
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+            margin: 0 0 15px 0;
+        }
+
+        p {
+            color: #a1a1a6;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* Estilo responsivo para la imagen (se adapta de 624px en escritorio a móviles) */
+        .imagen-proyecto {
+            width: 100%;
+            max-width: 624px;
+            height: auto;
+            max-height: 362px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+            margin-bottom: 30px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Botón de regresar estilo Apple Glass */
+        .btn-regresar {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.35);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .btn-regresar:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8),
+                        0 0 15px rgba(255, 255, 255, 0.15);
+        }
+    </style>
 </head>
 <body>
 
-<h1>Mi proyecto de vida</h1>
-<p>Vivir del desarrollo software y aprender a usar IA para empleos, ya que es el nuevo mundo! y otros proyectos mas </p>
+    <main class="contenedor-cristal">
+        <h1>Mi proyecto de vida</h1>
+        <p>Vivir del desarrollo software y aprender a usar IA para empleos, ya que es el nuevo mundo! y otros proyectos mas</p>
+        
+        <img src="img/chatgpt.jpeg" alt="Desarrollo e IA" class="imagen-proyecto">
 
+        <div>
+            <a href="index.html" class="btn-regresar">Regresar</a>
+        </div>
+    </main>
 
-<img src="img/chatgpt.jpeg" alt="Google" style="width:624px; height:362px;">
-<a href="index.html">Regresar</a>
 </body>
 </html>
